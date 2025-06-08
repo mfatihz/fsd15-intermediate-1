@@ -4,7 +4,7 @@ import AuthHeader from "../molecules/auth-header";
 
 const Register = () => {
   return (
-    <AuthTemplate bgImage={"login-bg.svg"}>
+    <AuthTemplate bgImage={"register-bg.svg"}>
       <AuthHeader title="Daftar" message="Selamat datang!"/>
       <RegisterForm />
     </AuthTemplate>
