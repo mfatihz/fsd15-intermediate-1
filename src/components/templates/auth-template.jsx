@@ -6,7 +6,8 @@ const AuthTemplate = ({ bgImage, children }) => {
         flex items-center justify-center
         bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url(src/assets/images/background/${bgImage})`,
+        //backgroundImage: `url(src/assets/images/background/${bgImage})`,
+        backgroundImage: `url(${bgImage})`,
       }}
     >
       <section className="
