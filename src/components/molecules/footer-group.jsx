@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import FooterLink from "../atoms/text-link";
 import ToggleButton from "../atoms/toggle-button";
+import clsx from 'clsx'
 
-const FooterGroup = ({ title, links, basePath = "", isGrid = false, gridCols = "" }) => {
+const FooterGroup = ({ title, links, basePath = "", isGrid = false, gridCols = "", className="" }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -25,7 +26,7 @@ const FooterGroup = ({ title, links, basePath = "", isGrid = false, gridCols = "
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className={clsx("flex flex-col gap-4", className)}>
       <button
         onClick={handleToggle}
         className="flex justify-between items-center text-lg font-semibold cursor-pointer"

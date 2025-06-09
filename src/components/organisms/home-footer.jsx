@@ -28,12 +28,14 @@ const HomeFooter = ({ genreData, helpData }) => {
           basePath={ genreData.basePath }
           isGrid //TODO: ganti jadi block column-4
           gridCols="grid-cols-2 md:grid-cols-4" //TODO: ganti jadi block
+          className="ml-auto"
         />
       
         <FooterGroup
           title={ helpData.title }
           links={ helpData.links }
           basePath={ helpData.basePath }
+          className="m-auto"
         />
       </div>
     </footer>
