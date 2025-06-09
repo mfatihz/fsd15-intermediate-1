@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import logo from './images/chill-logo.svg';
-import logoSmall from './images/chill-logo-small.svg';
+import logo from '../../assets/images/icons/chill-logo.svg';
+import logoSmall from '../../assets/images/icons/chill-logo-small.svg';
 
 const ChillLogo = ({className=''}) => {
   const baseStyle = `

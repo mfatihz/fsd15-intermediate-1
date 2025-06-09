@@ -1,4 +1,4 @@
-import icon from './images/user-icon.svg'
+import icon from '../../assets/images/icons/user-icon.svg'
 
 function UserIcon() {
     return (

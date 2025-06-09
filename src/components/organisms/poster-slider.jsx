@@ -2,8 +2,9 @@ import { useRef, useState, useEffect } from 'react';
 import ScrollRightButton from "../atoms/scroll-right-icon";
 import ScrollLeftButton from "../atoms/scroll-left-button";
 import PosterDefault from "../molecules/poster-default";
+import clsx from 'clsx'
 
-const PosterSlider = ({ movies, type }) => {
+const PosterSlider = ({ movies, galleryType, className }) => {
   const scrollContainerRef = useRef(null);
   const itemRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -16,7 +17,7 @@ const PosterSlider = ({ movies, type }) => {
   // Check for mobile and content overflow
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 640);
     };
 
     const checkContentOverflow = () => {
@@ -51,7 +52,6 @@ const PosterSlider = ({ movies, type }) => {
     };
   }, [movies.length]);
 
-  // Handle touch events for swipe scrolling on mobile
   const handleTouchStart = (e) => {
     if (!isMobile) return;
     const touch = e.touches[0];
@@ -68,7 +68,6 @@ const PosterSlider = ({ movies, type }) => {
     scrollContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  // Custom easing function for smoother animation
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
   const smoothScroll = (distance, duration = 800) => {
@@ -117,27 +116,30 @@ const PosterSlider = ({ movies, type }) => {
       className="inline-block flex-shrink-0"
       ref={index === 0 ? itemRef : null}
     >
-      <PosterDefault movie={movie} type={type} />
+      <PosterDefault movie={movie} galleryType={galleryType} />
     </li>
   ));
 
+  // const baseStyle="w-full overflow-x-scroll scrollbar-hide py-4 touch-pan-x"
+  const baseStyle="w-full py-12 touch-pan-x overflow-x-scroll scrollbar-hide"
+
   return (
-    <div className="relative">
+    <div className="relative overflow-visible">
+      
       <div 
         ref={scrollContainerRef}
-        className="w-full max-w-[100vw] overflow-x-auto scrollbar-hide py-4 touch-pan-x"
+        // className="w-full overflow-x-scroll scrollbar-hide py-4 touch-pan-x"
+        className={clsx(baseStyle, className)}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
-        <ul className={"flex list-none p-0 whitespace-nowrap" + (type == 'continue' ? '' : ' gap-4')}>
+        <ul className={"flex list-none p-0 whitespace-nowrap" + (galleryType == 'continue' ? '' : ' gap-4')}>
           {listItems}
         </ul>
       </div>
-
-      {/* Hide scroll buttons when not needed or on mobile */}
       {!isMobile && showScrollButtons && (
         <>
-          <div className="absolute z-10 bottom-1/2 translate-y-1/2 left-0 -translate-x-1/2 transition-opacity duration-300">
+          <div className="absolute z-20 bottom-1/2 translate-y-1/2 left-0 -translate-x-1/2 transition-opacity duration-300">
             <ScrollLeftButton 
               onClick={(e) => {
                 e.stopPropagation();
@@ -146,7 +148,7 @@ const PosterSlider = ({ movies, type }) => {
               className="hover:opacity-80"
             />
           </div>
-          <div className="absolute z-10 bottom-1/2 translate-y-1/2 right-0 translate-x-1/2 transition-opacity duration-300">
+          <div className="absolute z-20 bottom-1/2 translate-y-1/2 right-0 translate-x-1/2 transition-opacity duration-300">
             <ScrollRightButton 
               onClick={(e) => {
                 e.stopPropagation();

@@ -1,4 +1,4 @@
-import icon from './images/google-icon.svg'
+import icon from '../../assets/images/icons/google-icon.svg'
 
 function GoogleIcon() {
     return (

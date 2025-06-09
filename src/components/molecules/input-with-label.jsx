@@ -1,5 +1,5 @@
 import Label from "../atoms/auth-label";
-import Input from "../atoms/auth-nput";
+import Input from "../atoms/auth-input";
 
 const InputWithLabel = ({ label, ...props }) => {
   return (

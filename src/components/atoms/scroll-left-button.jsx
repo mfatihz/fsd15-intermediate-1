@@ -1,4 +1,4 @@
-import icon from './images/arrow-left.svg'
+import icon from '../../assets/images/icons/arrow-left.svg'
 import clsx from 'clsx'
 
 function ScrollLeftButton({className, onClick=null}) {

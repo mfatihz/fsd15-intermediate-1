@@ -1,4 +1,4 @@
-import icon from './images/star-icon.svg'
+import icon from '../../assets/images/icons/star-icon.svg'
 
 function StarIcon() {
     return (

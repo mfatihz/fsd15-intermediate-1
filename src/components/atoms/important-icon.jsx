@@ -1,4 +1,4 @@
-import icon from './images/important-icon.svg'
+import icon from '../../assets/images/icons/important-icon.svg'
 
 function ImportantIcon() {
     return (

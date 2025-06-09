@@ -1,4 +1,4 @@
-import icon from './images/arrow-right.svg'
+import icon from '../../assets/images/icons/arrow-right.svg'
 import clsx from 'clsx'
 
 function ScrollRightButton({className, onClick=null}) {

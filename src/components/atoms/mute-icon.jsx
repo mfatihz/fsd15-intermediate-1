@@ -1,4 +1,4 @@
-import muteOnIcon from './images/mute-on-icon.svg'
+import muteOnIcon from '../../assets/images/icons/mute-on-icon.svg'
 
 function MuteIcon() {
     return (

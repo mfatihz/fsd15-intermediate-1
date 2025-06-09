@@ -17,6 +17,9 @@ export const heroDB = {
         portrait:'/images/poster-portrait/suzume.svg',
         landscape:'/images/poster-landscape/suzume.svg',
     },
+    duration:'1.45',
+    episodes: null,
+    isViewed: false,
     summary: `Sebuah benda tak dikenal mengambil alih dunia.
         Dalam keputusasaan, Departemen Pertahanan mulai merekrut lebih banyak tentara,
         termasuk siswa sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.`,
@@ -34,7 +37,7 @@ const seederMovie = (id)=>{
         images:{
             hero:'',
             portrait:'/images/poster-portrait/suzume.svg',
-            landscape:'/images/poster-landscape/all-us-dead.svg',
+            landscape:'/images/poster-landscape/suzume.svg',
         },
         duration:'1.45',
         episodes: null,

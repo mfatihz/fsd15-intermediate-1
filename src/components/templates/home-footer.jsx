@@ -8,6 +8,7 @@ const HomeFooter = ({ genreData, helpData }) => {
         border-t border-gray-300
         px-4 sm:px-10 md:px-20
         py-3 sm:py-5 md:py-8
+        bg-[#181A1C]
         "
     >
       <div className="flex flex-col sm:flex-row gap-6">

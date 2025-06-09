@@ -1,5 +1,5 @@
 import React from 'react'
-import chevronDown from './images/chevron-down.svg'
+import chevronDown from '../../assets/images/icons/chevron-down.svg'
 
 function ChevronDownIcon() {
     return (

@@ -1,4 +1,4 @@
-import icon from './images/exit-icon.svg'
+import icon from '../../assets/images/icons/exit-icon.svg'
 
 function ExitIcon() {
     return (

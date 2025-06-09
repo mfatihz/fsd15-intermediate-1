@@ -1,5 +1,5 @@
-import ChevronDown from './images/chevron-down.svg';
-import ChevronRight from './images/chevron-right.svg';
+import ChevronDown from '../../assets/images/icons/chevron-down.svg';
+import ChevronRight from '../../assets/images/icons/chevron-right.svg';
 
 const ToggleButton = ({ isOpen }) => {
   const icon = isOpen ? ChevronDown : ChevronRight;

@@ -1,4 +1,4 @@
-import icon from './images/eye-off.svg'
+import icon from '../../assets/images/icons/eye-off.svg'
 
 function Eye() {
     return (

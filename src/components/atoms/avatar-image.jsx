@@ -1,4 +1,4 @@
-import avatar from './images/avatar.svg'
+import avatar from '../../assets/images/icons/avatar.svg'
 
 function AvatarImage() {
     return (
