@@ -19,7 +19,7 @@ export const heroDB = {
     },
     duration:'1.45',
     episodes: null,
-    isViewed: false,
+    myList: false,
     summary: `Sebuah benda tak dikenal mengambil alih dunia.
         Dalam keputusasaan, Departemen Pertahanan mulai merekrut lebih banyak tentara,
         termasuk siswa sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.`,
@@ -41,12 +41,33 @@ const seederMovie = (id)=>{
         },
         duration:'1.45',
         episodes: null,
-        isViewed: false,
+        myList: false,
         summary:'Ringkasan belum tersedia',
     }
 }
 
-export const continueDB = [seederMovie(0),seederMovie(1),seederMovie(2),seederMovie(3),seederMovie(4),seederMovie(5),seederMovie(6)]
-export const topDB = [seederMovie(0),seederMovie(1)]
-export const trendingDB = [seederMovie(0),seederMovie(1),seederMovie(2),seederMovie(3),seederMovie(4),seederMovie(5),seederMovie(6)]
-export const newDB = [seederMovie(0),seederMovie(1),seederMovie(2),seederMovie(3),seederMovie(4),seederMovie(5),seederMovie(6)]
+const seederSeries = (id)=>{
+    return {
+        id: id,
+        title:'All of Us Dead',
+        type:['movie','series'][1],
+        contentRating:['18+','G','PG','R'][0],
+        genres:['action', 'Sci-fi'],
+        userRating:4.5,
+        badges:['new'],
+        images:{
+            hero:'all-us-dead.svg',
+            portrait:'/images/poster-portrait/all-us-dead.svg',
+            landscape:'/images/poster-landscape/all-us-dead.svg',
+        },
+        duration:null,
+        episodes:'17',
+        myList:false,
+        summary:'Ringkasan belum tersedia',
+    }
+}
+
+export const continueDB = [seederMovie(0),seederSeries(1),seederMovie(2),seederSeries(3),seederMovie(4),seederMovie(5),seederMovie(6)]
+export const topDB = [seederSeries(0),seederMovie(1)]
+export const trendingDB = [seederMovie(0),seederMovie(1),seederSeries(2),seederSeries(3),seederMovie(4),seederMovie(5),seederMovie(6)]
+export const newDB = [seederMovie(0),seederSeries(1),seederSeries(2),seederMovie(3),seederMovie(4),seederMovie(5),seederMovie(6)]
