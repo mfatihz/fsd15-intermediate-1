@@ -54,7 +54,7 @@ const seederMovie2 = (id)=>{
         contentRating:['18+','G','PG','R'][1],
         genres:['action','anime','fantasy'],
         userRating:4.6,
-        badges:['top'],
+        badges:[],
         images:{
             hero:'',
             portrait:'/images/poster-portrait/big-hero-6.svg',
@@ -96,7 +96,7 @@ const seederSeries2 = (id)=>{
         contentRating:['18+','G','PG','R'][3],
         genres:['action', 'Sci-fi', 'Thriller', 'Romance'],
         userRating:4.5,
-        badges:[],
+        badges:['top'],
         images:{
             hero:'',
             portrait:'/images/poster-portrait/otto.svg',
