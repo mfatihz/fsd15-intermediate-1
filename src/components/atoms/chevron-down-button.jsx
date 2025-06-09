@@ -20,7 +20,7 @@ function ChevronDownButton({onClick, className}) {
     >
       <img
             src={ icon }
-            alt='Mute on'
+            alt='Chevron icon'
             loading="lazy"
             className='h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6'
         />

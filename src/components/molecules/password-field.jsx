@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Label from "../atoms/auth-label";
 import Input from "../atoms/auth-input";
-import Eye from "../atoms/eye";
+import EyeIcon from "../atoms/eye-icon";
 
 const PasswordField = ({name="password", placeholder="Masukkan kata sandi"}) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +22,7 @@ const PasswordField = ({name="password", placeholder="Masukkan kata sandi"}) => 
           onClick={() => setShowPassword((prev) => !prev)}
           className="absolute right-3 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition cursor-pointer"
         >
-          <Eye />
+          <EyeIcon />
         </button>
       </div>
     </div>

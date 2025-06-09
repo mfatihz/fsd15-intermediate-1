@@ -1,4 +1,3 @@
-import React from 'react'
 import chevronDown from '../../assets/images/icons/chevron-down.svg'
 
 function ChevronDownIcon() {

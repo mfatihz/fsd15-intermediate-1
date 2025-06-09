@@ -1,4 +1,4 @@
-import GoogleIcon from "./google-icon";
+import icon from '../../assets/images/icons/google-icon.svg'
 
 const GoogleButton = ({ children = "Masuk dengan Google" }) => {
   return (
@@ -10,7 +10,11 @@ const GoogleButton = ({ children = "Masuk dengan Google" }) => {
         hover:bg-white/20 transition flex flex-row justify-center items-center gap-5"
       onClick={() => alert("Login Google belum dikembangkan")}
     >
-      <GoogleIcon />
+      <img
+          src={icon}
+          alt='Google logo'
+          loading="lazy"
+      />
       { children }
     </button>
   );

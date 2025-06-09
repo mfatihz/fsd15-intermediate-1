@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import ScrollRightButton from "../atoms/scroll-right-icon";
+import ScrollRightButton from "../atoms/scroll-right-button";
 import ScrollLeftButton from "../atoms/scroll-left-button";
 import PosterDefault from "../molecules/poster-default";
 import clsx from 'clsx'

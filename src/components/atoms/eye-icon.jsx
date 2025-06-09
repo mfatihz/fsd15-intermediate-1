@@ -1,6 +1,6 @@
 import icon from '../../assets/images/icons/eye-off.svg'
 
-function Eye() {
+function EyeIcon() {
     return (
         <img
             src={ icon }
@@ -9,4 +9,4 @@ function Eye() {
     )
 }
 
-export default Eye
+export default EyeIcon
