@@ -85,7 +85,7 @@ const seederSeries = ()=>{
         type:['movie','series'][1],
         genres:['series','action','Sci-fi','drama','romance'],
         badges:['new','top'],
-        contentRating:['18+','G','PG','R'][1],
+        contentRating:['18+','G','PG','R'][0],
         userRating:4.5,
         duration:null,
         episodes:'17',
