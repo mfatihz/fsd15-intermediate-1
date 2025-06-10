@@ -135,7 +135,7 @@ export const continueDB = [
 ]
 
 export const topDB = [
-    seederSeries(),seederMovie2(),seederSeries3(),seederMovie(),seederMovie3()
+    seederSeries(),seederMovie(),seederSeries3(),seederMovie2(),seederMovie3()
 ]
 
 export const trendingDB = [
@@ -144,6 +144,6 @@ export const trendingDB = [
 ]
 
 export const newDB = [
-    seederMovie2(),seederSeries2(),seederMovie3(),seederSeries(),seederMovie(),seederSeries3(),
-    seederMovie2(),seederMovie3(),seederMovie(),seederSeries2(),seederSeries3(),seederSeries(),
+    seederSeries2(),seederMovie3(),seederSeries(),seederMovie(),seederMovie2(),seederSeries3(),
+    seederMovie3(),seederMovie(),seederSeries2(),seederSeries3(),seederSeries(),seederMovie2(),
 ]
