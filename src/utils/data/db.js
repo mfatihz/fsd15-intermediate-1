@@ -1,11 +1,11 @@
 export const heroDB = {
-    id: 0,
+    id: Math.random()*100,
     title: "Duty after School",
     type: ['movie','series'][0],
+    badges: ['new','top'],
     genres: ['action','drama','fantasy'],
     contentRating: "18+",
     userRating: 4.7,
-    badges: ['new','top'],
     images: {
         // note: Ketika Anda menggunakan URL langsung di CSS (termasuk inline style),
         // Vite secara otomatis memproses path tersebut selama path-nya relatif terhadap file yang sedang diproses
@@ -25,105 +25,125 @@ export const heroDB = {
         termasuk siswa sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.`,
 }
 
-const seederMovie = (id)=>{
+const seederMovie = ()=>{
     return {
-        id: id,
+        id: Math.random()*100,
         title:'Suzume',
         type:['movie','series'][0],
-        contentRating:['18+','G','PG','R'][2],
         genres:['action','drama','fantasy'],
-        userRating:4.7,
         badges:['new','top'],
+        contentRating:['18+','G','PG','R'][2],
+        userRating:4.7,
+        duration:'1.45',
+        episodes: null,
+        myList: false,
         images:{
             hero:'',
             portrait:'/images/poster-portrait/suzume.svg',
             landscape:'/images/poster-landscape/suzume.svg',
         },
-        duration:'1.45',
-        episodes: null,
-        myList: false,
         summary:'Ringkasan belum tersedia',
     }
 }
 
-const seederMovie2 = (id)=>{
-    return {
-        id: id,
-        title:'Big Hero 6',
-        type:['movie','series'][0],
-        contentRating:['18+','G','PG','R'][1],
-        genres:['action','anime','fantasy'],
-        userRating:4.6,
-        badges:[],
-        images:{
-            hero:'',
-            portrait:'/images/poster-portrait/big-hero-6.svg',
-            landscape:'/images/poster-landscape/big-hero-6.svg',
-        },
-        duration:'1.23',
-        episodes: null,
-        myList: false,
-        summary:'Ringkasan belum tersedia',
-    }
+const seederMovie2 = ()=>{
+    const seed = seederMovie();
+    seed.title = "Big Hero 6";
+    seed.contentRating = ['18+','G','PG','R'][1];
+    seed.genres = ['action','anime','fantasy'];
+    seed.badges = [];
+    seed.userRating = 4.6;
+    seed.duration = '1.23';
+    seed.images = {
+        hero:'',
+        portrait:'/images/poster-portrait/big-hero-6.svg',
+        landscape:'/images/poster-landscape/big-hero-6.svg',
+    };
+    return seed;
 }
 
-const seederSeries = (id)=>{
+const seederMovie3 = ()=>{
+    const seed = seederMovie();
+    seed.title = "The Tomorrow War";
+    seed.contentRating = ['18+','G','PG','R'][2];
+    seed.genres = ['action','fantasy','sci-fi'];
+    seed.badges = [];
+    seed.userRating = 4.6;
+    seed.duration = '1.31';
+    seed.images = {
+        hero:'',
+        portrait:'/images/poster-portrait/tom-war.svg',
+        landscape:'/images/poster-landscape/tom-war.svg',
+    };
+    return seed;
+}
+
+const seederSeries = ()=>{
     return {
-        id: id,
-        title:'All of Us Dead',
+        id: Math.random()*100,
+        title:'All of Us Are Dead',
         type:['movie','series'][1],
-        contentRating:['18+','G','PG','R'][0],
-        genres:['action', 'Sci-fi'],
+        genres:['series','action','Sci-fi','drama','romance'],
+        badges:['new','top'],
+        contentRating:['18+','G','PG','R'][1],
         userRating:4.5,
-        badges:['new'],
+        duration:null,
+        episodes:'17',
+        myList:false,
         images:{
             hero:'all-us-dead.svg',
             portrait:'/images/poster-portrait/all-us-dead.svg',
             landscape:'/images/poster-landscape/all-us-dead.svg',
         },
-        duration:null,
-        episodes:'17',
-        myList:false,
         summary:'Ringkasan belum tersedia',
     }
 }
 
-const seederSeries2 = (id)=>{
-    return {
-        id: id,
-        title:'Otto',
-        type:['movie','series'][1],
-        contentRating:['18+','G','PG','R'][3],
-        genres:['action', 'Sci-fi', 'Thriller', 'Romance'],
-        userRating:4.5,
-        badges:['top'],
-        images:{
-            hero:'',
-            portrait:'/images/poster-portrait/otto.svg',
-            landscape:'/images/poster-landscape/otto.svg',
-        },
-        duration:null,
-        episodes:'12',
-        myList:false,
-        summary:'Ringkasan belum tersedia',
-    }
+const seederSeries2 = ()=>{
+    const seed = seederSeries();
+    seed.title = "A Man Called Otto";
+    seed.contentRating = ['18+','G','PG','R'][3];
+    seed.genres = ['action', 'Sci-fi', 'Thriller', 'Romance'];
+    seed.badges = ['top'];
+    seed.userRating = 4.7;
+    seed.episodes = '21';
+    seed.images = {
+        hero:'',
+        portrait:'/images/poster-portrait/otto.svg',
+        landscape:'/images/poster-landscape/otto.svg',
+    };
+    return seed;
+}
+
+const seederSeries3 = ()=>{
+    const seed = seederSeries();
+    seed.title = "The Little Mermaid";
+    seed.badges = ['new'];
+    seed.userRating = 4.3;
+    seed.episodes = '15';
+    seed.images = {
+        hero:'',
+        portrait:'/images/poster-portrait/mermaid.svg',
+        landscape:'/images/poster-landscape/mermaid.svg',
+    };
+    return seed;
 }
 
 export const continueDB = [
-    seederMovie(0),seederSeries(1),seederMovie2(2),seederSeries2(3),
-    seederMovie(4),seederMovie2(5),seederSeries(6)
+    seederMovie(),seederSeries(),seederMovie2(),seederSeries2(),seederMovie3(),seederSeries3(),
+    seederMovie(),seederSeries3(),seederSeries(),seederMovie3(),seederMovie2(),seederSeries2(),
 ]
 
 export const topDB = [
-    seederSeries(0),seederMovie(1)
+    seederSeries(),seederMovie2(),seederSeries3(),seederMovie(),seederMovie3()
 ]
 
 export const trendingDB = [
-    seederMovie(0),seederMovie2(1),seederSeries(2),seederSeries2(3),
-    seederMovie2(4),seederMovie(5),seederSeries2(6)
+    seederMovie(),seederMovie2(),seederSeries(),seederMovie3(),seederSeries3(),seederSeries2(),
+    seederMovie2(),seederMovie(),seederSeries2(),seederMovie3(),seederSeries(),seederSeries3(),
 ]
 
 export const newDB = [
-    seederMovie2(0),seederSeries2(1),seederSeries(2),seederMovie(3),
-    seederMovie2(4),seederMovie(5),seederSeries2(6)
+    seederMovie2(),seederSeries2(),seederMovie3(),seederSeries(),seederMovie(),seederSeries3(),
+    seederMovie2(),seederMovie3(),seederMovie(),seederSeries2(),seederSeries3(),seederSeries(),
 ]
