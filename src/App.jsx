@@ -53,18 +53,18 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         {/* Navlinks */}
-        <Route path="/series" element={<UnderDevelopment />} />
-        <Route path="/movies" element={<UnderDevelopment />} />
-        <Route path="/lists" element={<UnderDevelopment />} />
+        <Route path="/series" element={<UnderDevelopment tag="Series" />} />
+        <Route path="/movies" element={<UnderDevelopment tag="Movies" />} />
+        <Route path="/lists" element={<UnderDevelopment tag="My-List" />} />
         {/* Menu */}
-        <Route path="/profile" element={<UnderDevelopment />} />
-        <Route path="/premium" element={<UnderDevelopment />} />
+        <Route path="/profile" element={<UnderDevelopment tag="Profile" header={<p>mfatihz.std@gmail.com</p>}/>} />
+        <Route path="/premium" element={<UnderDevelopment tag="Premium" />} />
         {/* Auth */}
-        <Route path="/forgot-password" element={<UnderDevelopment to="/login">Kembali ke Login</UnderDevelopment>} />
+        <Route path="/forgot-password" element={<UnderDevelopment to="/login" tag="Login">Kembali ke Login</UnderDevelopment>} />
         {/* Genre */}
-        <Route path="/genre/:genreId" element={<UnderDevelopment />} />
+        <Route path="/genre/:genreId" element={<UnderDevelopment tag="Genre" />} />
         {/* Bantuan */}
-        <Route path="/help/:helpId" element={<UnderDevelopment />} />
+        <Route path="/help/:helpId" element={<UnderDevelopment tag="Help" />} />
         {/* Catch-all route untuk path lain di footer */}
         <Route path="*" element={<UnderDevelopment />} />
       </Routes>
