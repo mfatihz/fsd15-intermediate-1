@@ -1,37 +1,40 @@
 import clsx from 'clsx'
-import FooterGroup from "../molecules/footer-group";
+import FooterGroup from "./footer-group";
 import ChillLogoFull from "../atoms/chill-logo-full";
 import Copyright from "../atoms/copyright";
+import FooterLinks from '../molecules/footer-links';
 
 const HomeFooter = ({ genreData, helpData, className }) => {
   const baseStyle = `
-    flex flex-col sm:flex-row gap-6
+    flex flex-col sm:flex-row gap-4 sm:gap-10 md:gap-20
     border-t border-gray-300
     bg-[#181A1C]
   `
-
+  const genreLinks = <FooterLinks 
+    links={ genreData.links }
+    basePath={ genreData.basePath }
+    columns='columns-2 md:columns-4 gap-8'
+  />
+  const helpLinks = <FooterLinks 
+    links={ helpData.links }
+    basePath={ helpData.basePath }
+  />
+  
   return (
     <footer className={clsx(baseStyle, className)}>
-      {/* <div className="flex flex-col sm:flex-row gap-6"> */}
-        <section className="flex flex-col flex-none items-start gap-2 sm:gap-4">
-          <a href="#top"><ChillLogoFull /></a>
-          <Copyright />
-        </section>
-        
+      <section
+        className="flex flex-col flex-none items-start justify-start gap-2 sm:gap-4"
+      >
+        <a href="#top"><ChillLogoFull /></a>
+        <Copyright />
+      </section>
         <FooterGroup
           title={ genreData.title }
-          links={ genreData.links }
-          basePath={ genreData.basePath }
-          isGrid //TODO: ganti jadi block column-4
-          gridCols="grid-cols-2 md:grid-cols-4" //TODO: ganti jadi block
-          className="sm:ml-auto"
+          links={ genreLinks }
         />
-      
         <FooterGroup
           title={ helpData.title }
-          links={ helpData.links }
-          basePath={ helpData.basePath }
-          className="sm:ml-auto"
+          links={ helpLinks }
         />
       {/* </div> */}
     </footer>

@@ -5,6 +5,7 @@ import { useState } from 'react'
 function Poster({
   movie,
   galleryType,
+  isMobile=false,
 }) {
   const [isHovered, setIsHovered] = useState(false)
   
@@ -21,7 +22,7 @@ function Poster({
       />
 
       {/* Hover Poster */}
-      {isHovered && galleryType !== 'continue' && (
+      {!isMobile && isHovered && galleryType !== 'continue' && (
         <div className="absolute z-30 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <PosterHover movie={movie} />
         </div>

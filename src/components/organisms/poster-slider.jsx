@@ -13,6 +13,7 @@ const PosterSlider = ({ movies, galleryType, className }) => {
   const animationFrameRef = useRef(null);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   // Check for mobile and content overflow
   useEffect(() => {
@@ -57,15 +58,19 @@ const PosterSlider = ({ movies, galleryType, className }) => {
     const touch = e.touches[0];
     setStartX(touch.pageX);
     setScrollLeft(scrollContainerRef.current.scrollLeft);
+    setIsDragging(true);
   };
 
   const handleTouchMove = (e) => {
-    if (!isMobile || !scrollContainerRef.current) return;
-    e.preventDefault();
+    if (!isMobile || !isDragging || !scrollContainerRef.current) return;
     const touch = e.touches[0];
     const x = touch.pageX;
     const walk = (x - startX) * 2;
     scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
   };
 
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
@@ -116,22 +121,21 @@ const PosterSlider = ({ movies, galleryType, className }) => {
       className="inline-block flex-shrink-0"
       ref={index === 0 ? itemRef : null}
     >
-      <Poster movie={movie} galleryType={galleryType} />
+      <Poster movie={movie} galleryType={galleryType} isMobile={isMobile}/>
     </li>
   ));
 
-  // const baseStyle="w-full overflow-x-scroll scrollbar-hide py-4 touch-pan-x"
-  const baseStyle="w-full py-12 touch-pan-x overflow-x-scroll scrollbar-hide"
+  const baseStyle = "w-full py-12 touch-pan-x overflow-x-scroll scrollbar-hide";
 
   return (
     <div className="relative overflow-visible">
-      
       <div 
         ref={scrollContainerRef}
-        // className="w-full overflow-x-scroll scrollbar-hide py-4 touch-pan-x"
         className={clsx(baseStyle, className)}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{ touchAction: 'pan-y' }}
       >
         <ul className={"flex list-none p-0 whitespace-nowrap" + (galleryType == 'continue' ? '' : ' gap-4')}>
           {listItems}
