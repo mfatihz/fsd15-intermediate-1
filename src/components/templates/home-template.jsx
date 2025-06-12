@@ -54,9 +54,15 @@ function HomeTemplate({ header, footer, hero, galleries }) {
             <Footer
                 genreData={footer.genreData}
                 helpData={footer.helpData}
+                className="
+                    px-4 sm:px-10 md:px-20
+                    py-10 md:py-20
+                "
             />
         </>
     )
 }
+
+    
 
 export default HomeTemplate

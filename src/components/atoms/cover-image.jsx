@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-const CoverImage = ({src, className="w-full h-full"}) => {
+const CoverImage = ({src, className=""}) => { // className="w-full h-full"
     const baseStyle = "object-cover"
 
     return (
