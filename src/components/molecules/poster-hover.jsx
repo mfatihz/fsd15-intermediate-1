@@ -2,6 +2,8 @@ import CoverImage from '../atoms/cover-image'
 import PlayButton from '../atoms/play-button'
 import CheckButton from '../atoms/check-button'
 import ChevronDownButton from '../atoms/chevron-down-button'
+import PosterContentRating from '../atoms/poster-content-rating'
+import PosterLabel from '../atoms/poster-label'
 
 function PosterHover({movie}) {
   return (
@@ -20,15 +22,13 @@ function PosterHover({movie}) {
           <ChevronDownButton className="ml-auto"/>
         </div>
         <div className='flex gap-4 text-sm content-center items-center'>
-          <div className='bg-gray-700 px-3 py-1 rounded-full'>{movie.contentRating}</div>
-          <div className='text-gray-300'>{movie.type == "series" ?
-            (movie.episodes && movie.episodes + " episode") :
-            (movie.duration && movie.duration + " jam")}
-          </div>
+          <PosterContentRating>{ movie.contentRating }</PosterContentRating>
+          { movie.type == "series" ?
+            (movie.episodes && <PosterLabel>{ movie.episodes + " episode" }</PosterLabel>) :
+            (movie.duration && <PosterLabel>{ movie.duration + " jam" }</PosterLabel>)
+          }
         </div>
-        <div className='flex flex-wrap text-md text-gray-300 width-full'>
-          {movie.genres.join(" · ")}
-        </div>
+        {movie.genres && <PosterLabel>{ movie.genres.join(" · ") }</PosterLabel>}
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import ScrollRightButton from "../atoms/scroll-right-button";
 import ScrollLeftButton from "../atoms/scroll-left-button";
-import PosterDefault from "../molecules/poster-default";
+import Poster from "./poster";
 import clsx from 'clsx'
 
 const PosterSlider = ({ movies, galleryType, className }) => {
@@ -116,7 +116,7 @@ const PosterSlider = ({ movies, galleryType, className }) => {
       className="inline-block flex-shrink-0"
       ref={index === 0 ? itemRef : null}
     >
-      <PosterDefault movie={movie} galleryType={galleryType} />
+      <Poster movie={movie} galleryType={galleryType} />
     </li>
   ));
 
