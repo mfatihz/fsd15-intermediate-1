@@ -17,7 +17,7 @@ function Poster({
       <PosterDefault
         movie={movie}
         galleryType={galleryType}
-        className='cursor-pointer'
+        className={galleryType !== 'continue' ? 'cursor-pointer' : ''}
       />
 
       {/* Hover Poster */}
