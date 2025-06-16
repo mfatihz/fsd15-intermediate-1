@@ -4,7 +4,7 @@ import ChillLogoFull from "../atoms/chill-logo-full";
 import Copyright from "../atoms/copyright";
 import FooterLinks from '../molecules/footer-links';
 
-const HomeFooter = ({ genreData, helpData, className }) => {
+const HomeFooter = ({ genreData, helpData, padding }) => {
   const baseStyle = `
     flex flex-col sm:flex-row gap-4 sm:gap-10 md:gap-20
     border-t border-gray-300
@@ -21,7 +21,7 @@ const HomeFooter = ({ genreData, helpData, className }) => {
   />
   
   return (
-    <footer className={clsx(baseStyle, className)}>
+    <footer className={clsx(baseStyle, padding)}>
       <section
         className="flex flex-col flex-none items-start justify-start gap-2 sm:gap-4"
       >

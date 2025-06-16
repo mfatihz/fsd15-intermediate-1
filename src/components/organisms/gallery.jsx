@@ -6,7 +6,10 @@ const Gallery = ({title, movies, galleryType, className=""}) => {
   return (
     <div className="relative w-full">
       <GalleryTitle className={clsx("absolute -top-2 left-0", className)}>{title}</GalleryTitle>
-      <PosterSlider movies={movies} galleryType={galleryType} className={className}/>
+      { movies
+        ? <PosterSlider movies={movies} galleryType={galleryType} className={className}/>
+        : <div className="py-10 text-xs w-full text-center">Belum ada isi</div>
+      }
     </div>
   )
 }

@@ -20,4 +20,8 @@ export const movieGalleries = [
         title: "Rilis Baru",
         movies: newDB
     },
+    {
+        title: "New Category",
+        movies: []
+    },
 ]
