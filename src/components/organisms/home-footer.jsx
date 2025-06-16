@@ -1,8 +1,7 @@
 import clsx from 'clsx'
 import FooterGroup from "./footer-group";
-import ChillLogoFull from "../atoms/chill-logo-full";
-import Copyright from "../atoms/copyright";
 import FooterLinks from '../molecules/footer-links';
+import FooterLogoSection from '../molecules/footer-logo-section';
 
 const HomeFooter = ({ genreData, helpData, padding }) => {
   const baseStyle = `
@@ -22,21 +21,15 @@ const HomeFooter = ({ genreData, helpData, padding }) => {
   
   return (
     <footer className={clsx(baseStyle, padding)}>
-      <section
-        className="flex flex-col flex-none items-start justify-start gap-2 sm:gap-4"
-      >
-        <a href="#top"><ChillLogoFull /></a>
-        <Copyright />
-      </section>
-        <FooterGroup
-          title={ genreData.title }
-          links={ genreLinks }
-        />
-        <FooterGroup
-          title={ helpData.title }
-          links={ helpLinks }
-        />
-      {/* </div> */}
+      <FooterLogoSection />
+      <FooterGroup
+        title={ genreData.title }
+        links={ genreLinks }
+      />
+      <FooterGroup
+        title={ helpData.title }
+        links={ helpLinks }
+      />
     </footer>
   );
 };
