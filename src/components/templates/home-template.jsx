@@ -1,4 +1,3 @@
-import Gallery from "../organisms/gallery"
 import Header from "../organisms/home-header"
 import Hero from "../organisms/hero"
 import Footer from "../organisms/home-footer"

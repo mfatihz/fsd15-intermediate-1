@@ -1,5 +1,3 @@
-import React from 'react';
-
 const LogoSection = () => {
   const currentYear = new Date().getFullYear();
 
