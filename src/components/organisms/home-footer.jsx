@@ -3,7 +3,7 @@ import FooterGroup from "./footer-group";
 import FooterLinks from '../molecules/footer-links';
 import FooterLogoSection from '../molecules/footer-logo-section';
 
-const HomeFooter = ({ genreData, helpData, padding }) => {
+const HomeFooter = ({ genreData, helpData, padding, onClick }) => {
   const baseStyle = `
     flex flex-col sm:flex-row gap-4 sm:gap-10 md:gap-20
     border-t border-gray-300
@@ -21,7 +21,7 @@ const HomeFooter = ({ genreData, helpData, padding }) => {
   
   return (
     <footer className={clsx(baseStyle, padding)}>
-      <FooterLogoSection />
+      <FooterLogoSection onClick={onClick} />
       <FooterGroup
         title={ genreData.title }
         links={ genreLinks }
