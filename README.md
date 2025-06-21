@@ -6,6 +6,4 @@ Demo: [netlify](https://comfy-praline-f1ac44.netlify.app/)
 ## Desain Component
 **Note: nomenclature pada desain dan kode tidak selalu sama**
 
-![component-design-chill-app](https://github.com/user-attachments/assets/6124bfca-07d9-4594-9193-c744e46d1bcd)
-
 ![component-design-chill-app-2](https://github.com/user-attachments/assets/5bd18e78-2754-4c70-bfdb-7495b80f88c1)
