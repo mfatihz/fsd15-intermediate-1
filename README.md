@@ -7,7 +7,7 @@ Demo: [netlify](https://comfy-praline-f1ac44.netlify.app/)
 
 Design methodology: atomic design  
 
-![chill-app-component-design](https://github.com/user-attachments/assets/a8e25ff2-29b9-4492-a55f-6fdfa4abb39b)
+![chill-app-component-design](https://github.com/user-attachments/assets/9a84b4f6-c3aa-4135-81fd-eb5fc3579d8d)
 
 > [!NOTE]
 > Nomenclature pada desain dan kode tidak selalu sama.
